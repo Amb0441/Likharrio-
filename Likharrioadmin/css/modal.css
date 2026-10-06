@@ -1,0 +1,65 @@
+/* ═══════════════════════════════════════════════
+   LIKHARRIO ADMIN — MODAL
+   ═══════════════════════════════════════════════ */
+
+.modal-backdrop {
+  display: none;
+  position: fixed; inset: 0;
+  background: rgba(0,0,0,.45);
+  z-index: 1000;
+  align-items: center; justify-content: center;
+  padding: 20px;
+}
+.modal-backdrop.open { display: flex; animation: fadeInBack .2s ease; }
+@keyframes fadeInBack { from { opacity:0 } to { opacity:1 } }
+.modal-box {
+  background: var(--white);
+  border-radius: 16px;
+  width: 100%; max-width: 560px;
+  max-height: 88vh;
+  display: flex; flex-direction: column;
+  box-shadow: var(--shadow-lg);
+  animation: slideUp .25s cubic-bezier(.4,0,.2,1);
+}
+@keyframes slideUp { from { transform:translateY(20px); opacity:0 } to { transform:none; opacity:1 } }
+.modal-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 18px 22px;
+  border-bottom: 1px solid var(--gray-xlight);
+  font-family: 'Playfair Display', serif;
+}
+#modal-title { font-size: 17px; font-weight: 600; }
+.modal-close {
+  background: none; border: none; cursor: pointer;
+  width: 28px; height: 28px;
+  border-radius: 6px; font-size: 16px;
+  display: flex; align-items: center; justify-content: center;
+  color: var(--gray); transition: background .15s;
+}
+.modal-close:hover { background: var(--gray-xlight); }
+.modal-body { padding: 20px 22px; overflow-y: auto; }
+
+/* Modal detail rows */
+.detail-section { margin-bottom: 16px; }
+.detail-section h4 { font-size: 11px; font-weight: 600; text-transform: uppercase; letter-spacing: .5px; color: var(--gray); margin-bottom: 8px; }
+.detail-row { display: flex; gap: 10px; font-size: 13px; padding: 5px 0; border-bottom: 1px solid var(--gray-xlight); }
+.detail-row:last-child { border: none; }
+.detail-key { color: var(--gray); min-width: 120px; flex-shrink: 0; }
+.detail-val { color: var(--ink2); word-break: break-all; }
+.detail-img { width: 100%; max-height: 200px; object-fit: cover; border-radius: 8px; margin-bottom: 14px; }
+.detail-imgs { display: flex; gap: 8px; flex-wrap: wrap; margin: 8px 0; }
+.detail-imgs img { width: 80px; height: 80px; border-radius: 6px; object-fit: cover; cursor: pointer; }
+.detail-av-row { display: flex; align-items: center; gap: 12px; margin-bottom: 14px; }
+.detail-av {
+  width: 48px; height: 48px;
+  border-radius: 50%; background: var(--red);
+  color: white; font-size: 20px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.detail-av-img {
+  width: 48px; height: 48px;
+  border-radius: 50%; object-fit: cover;
+  border: 2px solid var(--gray-light);
+  flex-shrink: 0;
+}

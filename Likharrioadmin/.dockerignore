@@ -1,0 +1,14 @@
+node_modules
+.git
+.firebase
+serviceAccountKey.json
+*firebase-adminsdk*.json
+scripts
+package.json
+package-lock.json
+Dockerfile
+firebase.json
+.firebaserc
+firestore.rules
+firestore.indexes.json
+storage.rules

@@ -1,0 +1,65 @@
+/* ═══════════════════════════════════════════════
+   LIKHARRIO ADMIN — VERIFICATION CARDS
+   ═══════════════════════════════════════════════ */
+
+.verif-list { display: flex; flex-direction: column; gap: 14px; }
+.verif-card {
+  background: var(--white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+}
+.verif-card.status-pending { border-left: 4px solid var(--amber); }
+.verif-card.status-approved { border-left: 4px solid var(--green); }
+.verif-card.status-rejected { border-left: 4px solid #ef4444; }
+.verif-head {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 16px 20px; gap: 12px;
+}
+.verif-user { display: flex; align-items: center; gap: 12px; }
+.verif-av {
+  width: 44px; height: 44px;
+  border-radius: 50%; background: var(--red);
+  color: white; font-size: 18px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.verif-uname { font-size: 14px; font-weight: 600; }
+.verif-uemail { font-size: 12px; color: var(--gray); }
+.verif-date { font-size: 11px; color: var(--gray); }
+.verif-body { padding: 0 20px 16px; }
+.verif-docs { display: flex; gap: 10px; margin: 12px 0; flex-wrap: wrap; }
+.verif-doc-img {
+  width: 80px; height: 80px;
+  border-radius: 8px; object-fit: cover;
+  background: var(--gray-xlight); cursor: pointer;
+  border: 2px solid var(--gray-light);
+  transition: border-color .2s;
+}
+.verif-doc-img:hover { border-color: var(--red); }
+.verif-selfie-img {
+  width: 120px; height: 120px;
+  border-radius: 10px;
+  border-color: #5B6FE0;
+}
+.verif-selfie-img:hover { border-color: #3D4DB7; }
+.verif-label { font-size: 11px; font-weight: 600; color: var(--gray); text-transform: uppercase; letter-spacing: .5px; margin-bottom: 6px; }
+.verif-statement { font-size: 13px; color: var(--ink2); line-height: 1.6; padding: 10px 12px; background: var(--gray-xlight); border-radius: 8px; margin: 8px 0; }
+.verif-actions { padding: 12px 20px; border-top: 1px solid var(--gray-xlight); display: flex; gap: 10px; }
+
+/* Dashboard mini verif list */
+.dash-verif-list { padding: 0 20px 16px; display: flex; flex-direction: column; gap: 10px; }
+.dash-verif-item {
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 10px 12px; background: var(--gray-xlight);
+  border-radius: 8px; gap: 10px;
+}
+.dash-verif-left { display: flex; align-items: center; gap: 10px; flex: 1; min-width: 0; }
+.dash-verif-av {
+  width: 32px; height: 32px;
+  border-radius: 50%; background: var(--red);
+  color: white; font-size: 12px; font-weight: 700;
+  display: flex; align-items: center; justify-content: center; flex-shrink: 0;
+}
+.dash-verif-name { font-size: 13px; font-weight: 500; }
+.dash-verif-email { font-size: 11px; color: var(--gray); }
+.dash-verif-actions { display: flex; gap: 6px; }

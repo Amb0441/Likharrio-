@@ -1,0 +1,14 @@
+{
+  "name": "likharrioadmin",
+  "version": "1.0.0",
+  "description": "Likharrio Admin Dashboard",
+  "scripts": {
+    "start": "serve .",
+    "deploy": "firebase deploy --only hosting:admin",
+    "sync-auth": "node scripts/sync-auth-users.js"
+  },
+  "dependencies": {
+    "firebase-admin": "^12.0.0",
+    "serve": "^14.2.0"
+  }
+}

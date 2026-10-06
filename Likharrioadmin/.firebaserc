@@ -1,0 +1,12 @@
+{
+  "projects": {
+    "default": "likharrio-82864"
+  },
+  "targets": {
+    "likharrio-82864": {
+      "hosting": {
+        "admin": ["likharrio-82864-admin"]
+      }
+    }
+  }
+}

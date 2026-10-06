@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Likharrio Admin - Login</title>
+  <link rel="icon" href="favicon.png" type="image/png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="css/base.css" />
+  <link rel="stylesheet" href="css/pages/login.css" />
+</head>
+<body class="login-page">
+
+  <div class="login-container">
+    <div class="login-logo">
+      <!-- Shield Logo SVG -->
+      <svg width="72" height="81" viewBox="0 0 80 90" fill="none" xmlns="http://www.w3.org/2000/svg" style="margin-bottom:14px;filter:drop-shadow(0 4px 16px rgba(0,0,0,0.25))">
+        <path d="M40 2 L76 18 L76 58 Q76 78 40 88 Q4 78 4 58 L4 18 Z" fill="white" opacity="0.18"/>
+        <path d="M40 2 L76 18 L76 58 Q76 78 40 88 Q4 78 4 58 L4 18 Z" fill="none" stroke="white" stroke-width="2.5" opacity="0.5"/>
+        <rect x="20" y="20" width="12" height="48" rx="2.5" fill="white"/>
+        <rect x="20" y="56" width="40" height="12" rx="2.5" fill="white"/>
+        <circle cx="58" cy="24" r="7" fill="#C9A84C"/>
+        <circle cx="58" cy="24" r="3" fill="white" opacity="0.65"/>
+      </svg>
+      <h1 style="font-family:'Playfair Display',serif;font-size:26px;font-weight:700;color:white;margin-bottom:4px;">Likharrio</h1>
+      <p style="font-size:11px;letter-spacing:2px;text-transform:uppercase;opacity:0.65;">Admin Console</p>
+    </div>
+
+    <div class="login-error" id="error-message"></div>
+
+    <form id="login-form" class="login-form">
+      <div class="form-group">
+        <label for="email">Email Address</label>
+        <input type="email" id="email" name="email" required placeholder="admin@likharrio.com" />
+      </div>
+      <div class="form-group">
+        <label for="password">Password</label>
+        <input type="password" id="password" name="password" required placeholder="Enter your password" />
+      </div>
+      <button type="submit" class="btn-login">Sign In</button>
+      <div class="login-loading" id="loading">Signing in...</div>
+    </form>
+  </div>
+
+  <!-- Firebase -->
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-app-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-auth-compat.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.7.1/firebase-firestore-compat.js"></script>
+  <script src="js/config/firebase-config.js"></script>
+  <script src="js/login.js"></script>
+</body>
+</html>

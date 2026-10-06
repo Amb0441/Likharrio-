@@ -1,0 +1,6 @@
+node_modules/
+.firebase/
+serviceAccountKey.json
+js/config/firebase-config.js
+*.service-account.json
+*firebase-adminsdk*.json

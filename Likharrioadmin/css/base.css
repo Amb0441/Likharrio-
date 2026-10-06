@@ -1,0 +1,45 @@
+/* ═══════════════════════════════════════════════
+   LIKHARRIO ADMIN — BASE
+   Font: Playfair Display (headings) + DM Sans (body)
+   Palette: Deep Red #8B1A1A · Off-white #FAF8F5 · Ink #1A1A2E
+   ═══════════════════════════════════════════════ */
+
+:root {
+  --red: #8B1A1A;
+  --red-dark: #6A1414;
+  --red-light: #f9eded;
+  --ink: #1A1A2E;
+  --ink2: #2d2d44;
+  --gray: #6B7280;
+  --gray-light: #E5E7EB;
+  --gray-xlight: #F9FAFB;
+  --bg: #FAF8F5;
+  --white: #FFFFFF;
+  --gold: #D4A843;
+  --green: #16a34a;
+  --green-light: #dcfce7;
+  --amber: #d97706;
+  --amber-light: #fef3c7;
+  --blue: #2563eb;
+  --blue-light: #dbeafe;
+  --sidebar-w: 248px;
+  --radius: 12px;
+  --shadow: 0 1px 3px rgba(0,0,0,.07), 0 4px 16px rgba(0,0,0,.06);
+  --shadow-lg: 0 8px 32px rgba(0,0,0,.14);
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { font-size: 14px; }
+body {
+  font-family: 'DM Sans', sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+  display: flex;
+  min-height: 100vh;
+  overflow-x: hidden;
+}
+
+/* ══════════ SCROLLBAR ══════════ */
+::-webkit-scrollbar { width: 5px; height: 5px; }
+::-webkit-scrollbar-track { background: transparent; }
+::-webkit-scrollbar-thumb { background: var(--gray-light); border-radius: 10px; }

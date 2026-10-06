@@ -1,0 +1,102 @@
+/* ═══════════════════════════════════════════════
+   LIKHARRIO ADMIN — LOGIN PAGE
+   ═══════════════════════════════════════════════ */
+
+.login-page {
+  background: var(--bg);
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.login-container {
+  background: var(--red);
+  padding: 40px;
+  border-radius: var(--radius);
+  box-shadow: var(--shadow-lg);
+  width: 100%;
+  max-width: 400px;
+}
+
+.login-logo {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.login-logo h1 {
+  color: var(--white);
+  font-size: 28px;
+  margin-bottom: 5px;
+}
+
+.login-logo p {
+  color: var(--white);
+  font-size: 14px;
+  opacity: 0.85;
+}
+
+.login-form .form-group {
+  margin-bottom: 20px;
+}
+
+.login-form label {
+  display: block;
+  margin-bottom: 8px;
+  color: var(--white);
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.login-form input {
+  width: 100%;
+  padding: 12px 15px;
+  border: 1px solid var(--white);
+  border-radius: 6px;
+  font-size: 14px;
+  transition: border-color 0.3s ease;
+  background: var(--white);
+}
+
+.login-form input:focus {
+  outline: none;
+  border-color: var(--blue);
+}
+
+.btn-login {
+  width: 100%;
+  padding: 12px;
+  background: #110c0c;
+  color: var(--white);
+  border: none;
+  border-radius: 6px;
+  font-size: 16px;
+  font-weight: 500;
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.btn-login:hover  { transform: translateY(-2px); }
+.btn-login:active { transform: translateY(0); }
+.btn-login:disabled { opacity: 0.6; cursor: not-allowed; transform: none; }
+
+.login-error {
+  background-color: #fee;
+  color: #c33;
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 20px;
+  font-size: 14px;
+  display: none;
+}
+
+.login-error.show { display: block; }
+
+.login-loading {
+  display: none;
+  text-align: center;
+  margin-top: 10px;
+  color: var(--white);
+  font-size: 14px;
+  opacity: 0.85;
+}
