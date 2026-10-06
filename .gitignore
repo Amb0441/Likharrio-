@@ -42,6 +42,12 @@ docker/public.env
 /ios
 /android
 
+# Firebase local cache and debug logs
+.firebase/
+firebase-debug.log
+firestore-debug.log
+ui-debug.log
+
 # sensitive files
 credentials.json
 serviceAccountKey.json

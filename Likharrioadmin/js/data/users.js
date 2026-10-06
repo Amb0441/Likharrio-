@@ -2,9 +2,12 @@
 
 async function loadUsers() {
   const snap = await db.collection('users').orderBy('createdAt', 'desc').get();
-  const privateSnap = await db.collectionGroup('account').get();
+  const privateSnaps = await Promise.all(
+    snap.docs.map((userDoc) => userDoc.ref.collection('private').doc('account').get())
+  );
   const privateByUser = {};
-  privateSnap.forEach((docSnap) => {
+  privateSnaps.forEach((docSnap) => {
+    if (!docSnap.exists) return;
     const userId = docSnap.ref.parent.parent && docSnap.ref.parent.parent.id;
     if (userId) privateByUser[userId] = docSnap.data();
   });

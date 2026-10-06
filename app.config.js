@@ -1,4 +1,14 @@
+const fs = require("fs");
+const path = require("path");
 const appJson = require("./app.json");
+
+const envFile = path.join(__dirname, ".env");
+if (fs.existsSync(envFile)) {
+  for (const line of fs.readFileSync(envFile, "utf8").split(/\r?\n/)) {
+    const match = line.match(/^(EXPO_PUBLIC_[A-Z0-9_]+)=(.*)$/);
+    if (match && !process.env[match[1]]) process.env[match[1]] = match[2];
+  }
+}
 
 module.exports = {
   expo: {

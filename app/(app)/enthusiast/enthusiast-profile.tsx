@@ -1,7 +1,7 @@
 ﻿import { Feather } from "@expo/vector-icons";
 import { manipulateAsync, SaveFormat } from "expo-image-manipulator";
 import * as ImagePicker from "expo-image-picker";
-import { signOut } from "firebase/auth";
+import { useRouter } from "expo-router";
 import {
   collection,
   doc,
@@ -33,7 +33,7 @@ import { SafeAreaView } from "react-native-safe-area-context";
 import AboutLikharrioModal from "../../../components/modals/AboutLikharrioModal";
 import { useAuth } from "../../../contexts/AuthContext";
 import { useLayoutMode } from "../../../hooks/useLayoutMode";
-import { auth, db } from "../../../lib/firebase";
+import { db } from "../../../lib/firebase";
 import { uploadImageToCloudinary } from "../../../utils/cloudinary";
 import { useGuardedRouter } from "../../../utils/navigationGuard";
 
@@ -81,7 +81,8 @@ interface ListItem {
 
 export default function Profile() {
   const { guardedPush, guardedReplace, guardedBack } = useGuardedRouter();
-  const { user, isGuestMode, setGuestMode } = useAuth();
+  const { user, isGuestMode, setGuestMode, signOut } = useAuth();
+  const router = useRouter();
   const { isWebsite, width } = useLayoutMode();
   const wideProfile = isWebsite && width >= 960;
 
@@ -367,7 +368,10 @@ export default function Profile() {
         text: 'Logout',
         style: 'destructive',
         onPress: async () => {
-          try { await signOut(auth); } catch { }
+          try {
+            await signOut();
+            router.replace("/(auth)/welcome");
+          } catch { }
         },
       },
     ]);

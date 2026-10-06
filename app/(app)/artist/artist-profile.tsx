@@ -2,7 +2,7 @@
 import { useGuardedRouter } from "../../../utils/navigationGuard";
 import * as ImagePicker from "expo-image-picker";
 import { manipulateAsync, SaveFormat } from "expo-image-manipulator";
-import { signOut } from "firebase/auth";
+import { useRouter } from "expo-router";
 import * as Clipboard from "expo-clipboard";
 import {
   collection,
@@ -31,7 +31,7 @@ import {
 import { SafeAreaView } from "react-native-safe-area-context";
 import { useAuth } from "../../../contexts/AuthContext";
 import { useLayoutMode } from "../../../hooks/useLayoutMode";
-import { auth, db } from "../../../lib/firebase";
+import { db } from "../../../lib/firebase";
 import COLORS from "../../../constants/Colors";
 import ProfileHeader, {
   type ArtistProfileData,
@@ -56,7 +56,8 @@ interface ArtworkItem {
 }
 
 export default function ArtistProfile() {
-  const { user, userProfile } = useAuth();
+  const { user, userProfile, signOut } = useAuth();
+  const router = useRouter();
   const { isWebsite } = useLayoutMode();
 
   const { guardedPush } = useGuardedRouter();
@@ -429,7 +430,8 @@ export default function ArtistProfile() {
           style: "destructive",
           onPress: async () => {
             try {
-              await signOut(auth);
+              await signOut();
+              router.replace("/(auth)/welcome");
             } catch (e) {
               console.error(e);
             }

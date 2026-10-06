@@ -4,6 +4,12 @@ Likharrio is a community for Cordilleran artists and the people who follow their
 
 On a tablet or monitor, Likharrio is a website with a top bar. On a phone, it stays a mobile app with bottom navigation. Both use the same accounts and the same content.
 
+## Team
+
+- **Sofia Isabelle C. Medina** — Project Leader and UI/UX Designer
+- **Cy F. Marquez** — Frontend and QA Assurance
+- **Anthony M. Ballestra** — Full Stack Developer
+
 ## Demo accounts
 
 Every demo account uses the password **DemoLikharrio2026!**
